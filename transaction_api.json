@@ -1,6 +1,6 @@
 {
     "clientId": "transaction_api",
-    "rootUrl": "https://localhost:8443/product",
+    "rootUrl": "https://localhost:8443/",
     "adminUrl": "https://localhost:8443",
     "surrogateAuthRequired": false,
     "enabled": true,
@@ -15,10 +15,10 @@
     "notBefore": 0,
     "bearerOnly": false,
     "consentRequired": false,
-    "standardFlowEnabled": true,
+    "standardFlowEnabled": false,
     "implicitFlowEnabled": false,
-    "directAccessGrantsEnabled": true,
-    "serviceAccountsEnabled": false,
+    "directAccessGrantsEnabled": false,
+    "serviceAccountsEnabled": true,
     "publicClient": false,
     "frontchannelLogout": false,
     "protocol": "openid-connect",
@@ -29,7 +29,7 @@
         "saml.force.post.binding": "false",
         "saml.multivalued.roles": "false",
         "saml.encrypt": "false",
-        "oauth2.device.authorization.grant.enabled": "true",
+        "oauth2.device.authorization.grant.enabled": "false",
         "backchannel.logout.revoke.offline.tokens": "false",
         "saml.server.signature": "false",
         "saml.server.signature.keyinfo.ext": "false",
@@ -66,14 +66,15 @@
             "config": {
                 "included.client.audience": "transaction_api",
                 "id.token.claim": "false",
-                "access.token.claim": "true"
+                "access.token.claim": "true",
+                "userinfo.token.claim": "false"
             }
         }
     ],
     "defaultClientScopes": [
         "web-origins",
-        "roles",
         "profile",
+        "roles",
         "email"
     ],
     "optionalClientScopes": [
